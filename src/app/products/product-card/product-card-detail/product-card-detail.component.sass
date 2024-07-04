@@ -1,0 +1,103 @@
+@import url('../../../../../src/styles.sass')
+
+.product-card
+  border-radius: 8px
+  overflow: hidden
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+  transition: all 0.3s ease
+  position: relative
+
+  &:hover
+    transform: translateY(-5px)
+    opacity: 80%
+
+
+  .product-details
+    display: grid
+    grid-template-rows: auto auto auto
+    padding: 0 20px 20px 20px
+
+  .product__card--title
+    height: 50px
+
+  .product-image
+    margin: 20px 20px 10px 20px
+    position: relative
+    overflow: hidden
+    max-width: 300px
+
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: linear-gradient(to top right, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%)
+      z-index: 1
+
+
+
+  .product-card__bottom
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    &--left
+      display: flex
+      flex-direction: row
+      align-items: baseline
+
+      &-icon
+        position: absolute
+        left: 15px
+        top: 15px
+        width: 40px
+        height: 40px
+        background-color: #3498db
+
+
+  .original-price
+    text-decoration: line-through
+    color: gray
+
+
+  .discounted-price
+    color: red
+    font-weight: bold
+
+
+  .discount-banner
+    background-color: red
+    color: white
+    font-weight: bold
+    padding: 8px 8px
+    position: absolute
+    top: 0
+    right: 0
+    border-radius: 0 0 0 8px
+    transform-origin: top right
+    z-index: 1
+
+
+  .product__card--discount
+    display: flex
+    flex-direction: column
+
+    &-row
+      display: flex
+      flex-direction: row
+
+  .font-large
+    font-size: 20px
+
+  img
+    display: block
+    opacity: 1
+    animation: fadeIn 2s ease-in forwards
+
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1

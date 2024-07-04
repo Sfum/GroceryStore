@@ -1,0 +1,28 @@
+<mat-card class="product-card mat-elevation-z24">
+  <img [src]="product.product_image" [routerLink]="'/products/' + product.id"
+       alt="Product Image"
+       class="product-image"
+       matTooltip="Details">
+  <div class="product-details">
+    <h2 class="font-primary opacity--md">{{ product.product_name }}</h2>
+    <div class="product-card__bottom margin__top--sm">
+      <div class="title-main opacity--lg">
+        <div *ngIf="product.salePrice && product.salePrice < product.price; else originalPrice">
+          <div class="product__card--discount">
+            <div class="product__card--discount-row">Was:
+              <div class="original-price margin__bottom--xsm">
+                {{ product.price  | currency:'USD':'symbol':'1.2-2'}}</div>
+            </div>
+            <div class="product__card--discount-row">Now:
+              <div class="font-large discounted-price">
+                {{ product.salePrice  | currency:'USD':'symbol':'1.2-2'}}</div>
+            </div>
+          </div>
+        </div>
+        <ng-template #originalPrice>
+          {{ product.price | currency:'USD':'symbol':'1.2-2'}}
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</mat-card>
