@@ -9,5 +9,15 @@ import { Product } from '../../../models/product';
 export class ProductCardDetailComponent {
   @Input() products!: Product[];
   @Input() product!: Product;
+  @Output() addToWishlistEvent: EventEmitter<Product> =
+    new EventEmitter<Product>();
+  @Output() addToCartEvent: EventEmitter<Product> = new EventEmitter<Product>();
 
+  addToWishlist(product: Product) {
+    this.addToWishlistEvent.emit(product);
+  }
+
+  addToCart(product: Product) {
+    this.addToCartEvent.emit(product);
+  }
 }

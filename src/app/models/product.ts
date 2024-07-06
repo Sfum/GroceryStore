@@ -1,15 +1,29 @@
+import { Timestamp } from 'firebase/firestore';
+
+export interface ProductComment {
+  userId: string;
+  userName: string;
+  comment: string;
+  date_created: Timestamp | Date | string;
+  rating: number;
+}
+
 export interface Product {
   id: number;
   product_name: string;
+  product_title: string;
   product_description: string;
-  uploaderId: string;
   brandId: number;
   categoryId: number;
   product_image: string;
   price: number;
+  in_bundle: boolean;
+  quantity: number;
+  in_cart: boolean;
+  discountPercentage?: number;
   salePrice?: number;
   onSale: boolean;
-  discount?: number;
-  in_bundle: boolean;
-  in_cart: boolean;
+  date_created?: Timestamp | Date;
+  uploaderId: string;
+  comments?: ProductComment[];
 }

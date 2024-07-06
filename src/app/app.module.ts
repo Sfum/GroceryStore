@@ -20,6 +20,9 @@ import { ProductCardComponent } from './products/product-card/product-card.compo
 import { ProductCardDetailComponent } from './products/product-card/product-card-detail/product-card-detail.component';
 import {MatCard} from "@angular/material/card";
 import {MatTooltip} from "@angular/material/tooltip";
+import {MatIcon} from "@angular/material/icon";
+import {MatButton, MatMiniFabButton} from "@angular/material/button";
+import {MatPaginator} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -36,7 +39,11 @@ import {MatTooltip} from "@angular/material/tooltip";
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     MatCard,
-    MatTooltip
+    MatTooltip,
+    MatIcon,
+    MatButton,
+    MatMiniFabButton,
+    MatPaginator
   ],
   providers: [],
   bootstrap: [AppComponent],
